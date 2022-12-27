@@ -1,5 +1,5 @@
 # Ganansi
-Transform spritesheets into ascii art arrays. 
+Transform spritesheets into text art arrays. 
 A Godot project.
 
 TODO - Let user use regions
