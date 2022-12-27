@@ -1,0 +1,260 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Converter.gd" type="Script" id=1]
+[ext_resource path="res://Bitstream-Vera-Sans-Mono/VeraMono.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [ 518.0 ]
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 518, 96 )
+centered = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 512.0
+margin_bottom = 568.0
+rect_clip_content = false
+bbcode_enabled = true
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -81.0
+margin_top = -55.0
+margin_right = 81.0
+margin_bottom = 107.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -66.0
+margin_top = -56.0
+margin_right = 66.0
+margin_bottom = 56.0
+custom_constants/separation = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_right = 132.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
+margin_top = 5.0
+margin_right = 54.0
+margin_bottom = 19.0
+text = "Hframes"
+
+[node name="SpinBox" type="SpinBox" parent="Panel/VBoxContainer/HBoxContainer"]
+margin_left = 58.0
+margin_right = 132.0
+margin_bottom = 24.0
+min_value = 1.0
+max_value = 1000.0
+value = 1.0
+allow_greater = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 32.0
+margin_right = 132.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer2"]
+margin_top = 5.0
+margin_right = 52.0
+margin_bottom = 19.0
+text = "Vframes"
+
+[node name="SpinBox" type="SpinBox" parent="Panel/VBoxContainer/HBoxContainer2"]
+margin_left = 56.0
+margin_right = 130.0
+margin_bottom = 24.0
+min_value = 1.0
+max_value = 1000.0
+value = 1.0
+allow_greater = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 64.0
+margin_right = 132.0
+margin_bottom = 84.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 30
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer/HBoxContainer3"]
+margin_right = 51.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Back"
+
+[node name="Button2" type="Button" parent="Panel/VBoxContainer/HBoxContainer3"]
+margin_left = 81.0
+margin_right = 132.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Next"
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer"]
+margin_left = 35.0
+margin_top = 92.0
+margin_right = 96.0
+margin_bottom = 112.0
+size_flags_horizontal = 4
+text = "Convert"
+
+[node name="FileDialog" type="FileDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -246.5
+margin_top = -122.0
+margin_right = 246.5
+margin_bottom = 122.0
+window_title = "Open a File"
+resizable = true
+mode = 0
+access = 2
+filters = PoolStringArray( "*.png" )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -506.0
+margin_top = -236.0
+margin_right = -424.0
+margin_bottom = -216.0
+
+[node name="Button3" type="Button" parent="HBoxContainer"]
+margin_right = 17.0
+margin_bottom = 20.0
+text = "-"
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+margin_left = 21.0
+margin_top = 3.0
+margin_right = 58.0
+margin_bottom = 17.0
+text = "Zoom"
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+margin_left = 62.0
+margin_right = 82.0
+margin_bottom = 20.0
+text = "+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -160.0
+margin_top = 32.0
+margin_right = -21.0
+margin_bottom = 172.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+margin_left = 21.0
+margin_right = 118.0
+margin_bottom = 24.0
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
+margin_top = 5.0
+margin_right = 19.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+text = "fps"
+
+[node name="SpinBox" type="SpinBox" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 23.0
+margin_right = 97.0
+margin_bottom = 24.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+allow_greater = true
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+margin_top = 28.0
+margin_right = 139.0
+margin_bottom = 48.0
+text = "copy bbcode array"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 52.0
+margin_right = 139.0
+margin_bottom = 108.0
+
+[node name="Control" type="Control" parent="VBoxContainer/VBoxContainer"]
+margin_right = 139.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 0, 32 )
+
+[node name="Button" type="Button" parent="VBoxContainer/VBoxContainer"]
+margin_top = 36.0
+margin_right = 139.0
+margin_bottom = 56.0
+size_flags_vertical = 0
+text = "Select a spritesheet"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -211.0
+margin_right = 211.0
+margin_bottom = 182.0
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center] [wave]_____                             _ 
+|  __ \\                           (_)
+| |  \\/ __ _ _ __   __ _ _ __  ___ _ 
+| | __ / _` | '_ \\ / _` | '_ \\/ __| |
+| |_\\ \\ (_| | | | | (_| | | | \\__ \\ |
+ \\____/\\__,_|_| |_|\\__,_|_| |_|___/_|
+                                     
+                                     "
+text = " _____                             _ 
+|  __ \\                           (_)
+| |  \\/ __ _ _ __   __ _ _ __  ___ _ 
+| | __ / _` | '_ \\ / _` | '_ \\/ __| |
+| |_\\ \\ (_| | | | | (_| | | | \\__ \\ |
+ \\____/\\__,_|_| |_|\\__,_|_| |_|___/_|
+                                     
+                                     "
+
+[connection signal="value_changed" from="Panel/VBoxContainer/HBoxContainer/SpinBox" to="." method="_on_hframes_value_changed"]
+[connection signal="value_changed" from="Panel/VBoxContainer/HBoxContainer2/SpinBox" to="." method="_on_vframes_value_changed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer3/Button" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer3/Button2" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Button" to="." method="_on_convert_pressed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_FileDialog_file_selected"]
+[connection signal="popup_hide" from="FileDialog" to="." method="_on_FileDialog_popup_hide"]
+[connection signal="pressed" from="HBoxContainer/Button3" to="." method="_on_zoom_minus_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_zoom_plus_pressed"]
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer2/SpinBox" to="." method="_on_fps_value_changed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_copy_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
